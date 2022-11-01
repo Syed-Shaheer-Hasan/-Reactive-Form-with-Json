@@ -2,18 +2,54 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "fname": "daniyao",
+      "email": "danihb@gmail.com",
+      "desig": "manager",
+      "salary": "21000"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "fname": "Syed Shaheer Hasan",
+      "email": "sshasan@gmail.com",
+      "desig": "Manager",
+      "salary": "75000"
+    },
+    {
+      "id": 3,
+      "fname": "Kamran khan ",
+      "email": "kamranhasan@gmail.com",
+      "desig": "Assistant Manager",
+      "salary": "45000"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "signUpusers": [
+    {
+      "name": "Hassan Khan",
+      "num": "03433166588",
+      "email": "hassan22@gmail.com",
+      "password": "hassan123",
+      "id": 1
+    },
+    {
+      "name": "Abdul Raheem Khan",
+      "num": "03216547799",
+      "email": "a.abdul11@gmail.com",
+      "password": "aaa111rrr",
+      "id": 2
+    },
+    {
+      "name": "Umair Ansari",
+      "num": "03216534789",
+      "email": "umair.ans@gmail.com",
+      "password": "umair12345",
+      "id": 3
+    },
+    {
+      "name": "Syed Bilal Hasan",
+      "num": "0333545885",
+      "email": "billo@gmail.com",
+      "password": "bilal000",
+      "id": 4
+    }
+  ]
 }

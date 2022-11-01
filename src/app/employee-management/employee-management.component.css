@@ -1,0 +1,25 @@
+.is-invalid{
+    border: 1px solid red;
+}
+/* input{
+    border: 1px solid red;
+} */
+.modal-footer{
+    border: none !important;
+}
+.navbar{
+    background: rgb(75, 105, 127);
+    
+    
+}
+a.nav-link{
+    color: azure;
+}
+.navbar-brand{
+    color: azure;
+
+}
+.container-fluid{
+    background: rgb(75, 105, 127);
+
+}

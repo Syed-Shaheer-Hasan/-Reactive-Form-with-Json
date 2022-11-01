@@ -1,0 +1,27 @@
+.card{
+    background: rgb(75, 105, 127);
+    color: azure;
+    
+   
+    
+}
+a{
+    color: azure;
+    text-decoration: none;
+    text-align: center;
+}
+@media screen and (max-width:580px) {
+    .card{
+        width: 100% !important;
+    }
+    button.btn.w-25.btn-primary {
+        width: 50%  !important;
+    }
+}
+
+.container{
+    min-height: 100vh !important;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

@@ -1,0 +1,12 @@
+.card{
+    background: hsla(205,46%,30%,1);
+    color: azure;
+    position: absolute;
+    top: 20%;
+
+}
+a{
+    color: azure;
+    text-align: center;
+    text-decoration: none;
+}
