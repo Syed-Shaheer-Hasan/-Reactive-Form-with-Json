@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div id="con" class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-11">
       <nav class="navbar navbar-expand">
@@ -27,12 +27,17 @@
     </div>
   </div>
 </div>
+<section>
+  <div class="justify-content-center mt-5">
+    <h2 class="text-center" style="color: rgb(75, 105, 127);  word-spacing: 10px;"><span class="px-4 py-1" style="background-color:rgb(75, 105, 127); color: azure; ">Employee's</span></h2>
+  </div>
+</section>
 
 <div class="container mt-2">
   <div class="py-4">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary mb-3 rounded-0" data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop">
+    <button type="button" style="background-color: rgb(75, 105, 127); color: white;" class="btn  mb-3 rounded-0" data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop" (click)="addEmployee()">
       Add New
     </button>
 
@@ -41,10 +46,10 @@
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
-          <th scope="col">Designation </th>
+          <th scope="col">Designation</th>
           <th scope="col">Salary</th>
-          <th scope="col">Edit</th>
-          <th scope="col">Delete</th>
+          <th style="padding-left:15px;" scope="col">Edit</th>
+          <th style="padding-left:15px;" scope="col">Delete</th>
 
         </tr>
       </thead>
@@ -54,9 +59,10 @@
                 <td scope="col">{{user.email}}</td>
                 <td scope="col">{{user.desig}}</td>
                 <td scope="col">{{user.salary}}</td>
-                <td><button  class="btn btn-warning">Edit</button></td>
-                <td><button  class="btn btn-danger">Delete</button></td>
-  
+                <td><button  class="btn btn-success" data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop" (click)="onEdit(user)">Edit</button></td>
+                <td><button  class="btn btn-danger" (click)="deletData(user)">Delete</button></td>
+
             </tr>
   
         </tbody>
@@ -66,7 +72,7 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  <div  class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -111,8 +117,10 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onReset()">Close</button>
-              <button type="submit" class="btn btn-primary" (click)="postData(); ">Add</button>
+              <button type="reset"  class="btn btn-secondary" data-bs-dismiss="modal" (click)="onReset()">Close</button>
+              <button type="submit" *ngIf="showadd" class="btn btn-primary" data-bs-dismiss="modal" (click)="postData(); ">Add</button>
+              <td><button  class="btn btn-info" *ngIf="showupdate"  data-bs-dismiss="modal" (click)="onUpdate()">Update</button></td>
+
             </div>
           </form>
         </div>

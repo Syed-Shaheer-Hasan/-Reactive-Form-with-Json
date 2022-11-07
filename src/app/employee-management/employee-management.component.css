@@ -23,3 +23,10 @@ a.nav-link{
     background: rgb(75, 105, 127);
 
 }
+
+@media screen and (max-width:580px) {
+  nav{
+    width: 100%;
+  }
+}
+

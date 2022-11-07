@@ -1,16 +1,27 @@
+<!-- <div class="container mt-5">
+    <div class="row justify-content-start">
+        <div class="col">
+            <h1 class="text-center"> Employee Management Portal </h1>
+        </div>
+    </div>
+</div> -->
+
 <div class="container mt-5">
-    <div class="row  justify-content-center">
-        <div class="col-4  card px-5 py-4 border shadow">
+    <div class="row justify-content-end">
+        <div class="col-4  card px-5 py-4 border shadow ">
             <h1 class="text-center py-2">Login </h1>
             <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="mb-3">
                     <label class="form-label"><b>Email address :</b></label>
-                    <input type="email" formControlName="email" class="form-control" placeholder="Enter your email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" formControlName="email" class="form-control" placeholder="Enter your email"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
 
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" placeholder="Enter your password" class="form-label"><b>Password :</b></label>
-                    <input type="password" formControlName="password" placeholder="Enter your password" class="form-control " id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" placeholder="Enter your password" class="form-label"><b>Password
+                            :</b></label>
+                    <input type="password" formControlName="password" placeholder="Enter your password"
+                        class="form-control " id="exampleInputPassword1">
                 </div>
                 <div class="text-center py-3">
                     <button type="submit" class="btn w-25  btn-primary">Login</button>
@@ -18,5 +29,13 @@
             </form>
             <a routerLink="/signUp">New user ? Click here to Sign Up</a>
         </div>
+    </div>
+    <div style="margin-top: 130px; color: hsla(205,46%,30%,1);" class="col-6 ">
+        <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;"
+            class="text-center py-4">Employee</h1>
+        <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;"
+            class="text-center py-4">Management</h1>
+        <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;"
+            class="text-center py-4">Portal</h1>
     </div>
 </div>

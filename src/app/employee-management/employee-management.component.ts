@@ -16,14 +16,17 @@ export class EmployeeManagementComponent implements OnInit {
   emailPromp = false;
   desigPromp = false;
   SalaryPromp = false;
-  obj:any;
+  obj: any;
+  showadd!:boolean;
+  showupdate!:boolean;
+
 
 
 
   CreateForm!: FormGroup;
   empObj: Employee = new Employee();
 
-  constructor(private fb: FormBuilder, private ser: EmployeeServiceService, private ngx :NgxUiLoaderService) { };
+  constructor(private fb: FormBuilder, private ser: EmployeeServiceService, private ngx: NgxUiLoaderService) { };
 
 
   ngOnInit(): void {
@@ -40,47 +43,16 @@ export class EmployeeManagementComponent implements OnInit {
     })
     this.getpostDta();
   }
-  // validate(){
-  //   if (!this.empObj.fname) {
-  //     this.submit = true
-  //   }
-  //   else {
-  //     this.submit = false
-
-  //   }
-  //   if (!this.empObj.email) {
-  //     this.emailPromp = true
-  //   }
-  //   else {
-  //     this.emailPromp = false
-
-  //   }
-  //   if (!this.empObj.desig) {
-  //     this.desigPromp = true
-  //   }
-  //   else {
-  //     this.desigPromp = false
-
-  //   }
-  //   if (!this.empObj.salary) {
-  //     this.SalaryPromp = true
-  //   }
-  //   else {
-  //     this.SalaryPromp = false
-
-  //   }
-  //   return !this.submit && !this.emailPromp && !this.desigPromp && !this.SalaryPromp
-  // }
 
   get f() { return this.CreateForm.controls; }
 
   postData() {
 
     this.submit = true;
-    if(this.CreateForm.invalid){
+    if (this.CreateForm.invalid) {
       return;
     }
-   
+
     this.empObj.fname = this.CreateForm.value.fname
     this.empObj.email = this.CreateForm.value.email
     this.empObj.desig = this.CreateForm.value.desig
@@ -88,21 +60,57 @@ export class EmployeeManagementComponent implements OnInit {
 
     this.ser.postEmp(this.empObj).subscribe(res => {
       console.log(res)
-    })
     this.getpostDta();
+    this.CreateForm.reset();
+
+    })
 
   }
-    getpostDta(){
-    this.ser.getdta().subscribe((res)=>{
+  getpostDta() {
+    this.ser.getdta().subscribe((res) => {
       this.obj = res
     })
   }
 
 
-  onReset(){
+  onReset() {
     this.submit = false;
     this.CreateForm.reset();
   }
-}
+  deletData(user: any) {
+    this.ser.delet(user.id).subscribe(res => {
+      console.log(res);
+      this.getpostDta();
+    })
+  }
+  onEdit(user:any){
+    this.showadd=false;
+    this.showupdate=true;
+    this.empObj.id = user.id;
+    this.CreateForm.controls['fname'].setValue(user.fname);
+    this.CreateForm.controls['email'].setValue(user.email);
+    this.CreateForm.controls['desig'].setValue(user.desig);
+    this.CreateForm.controls['salary'].setValue(user.salary);
+
   
+  }
+  onUpdate(){
+    this.empObj.fname = this.CreateForm.value.fname
+    this.empObj.email = this.CreateForm.value.email
+    this.empObj.desig = this.CreateForm.value.desig
+    this.empObj.salary = this.CreateForm.value.salary
+
+    this.ser.updateEmp(this.empObj,this.empObj.id).subscribe((res)=>{
+      console.log(res)
+      this.getpostDta();
+      
+    })
+  }
+
+  addEmployee(){
+    this.CreateForm.reset();
+    this.showadd=true;
+    this.showupdate=false;
+  }
+}
 

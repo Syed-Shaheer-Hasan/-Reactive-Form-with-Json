@@ -1,25 +1,25 @@
 {
   "posts": [
     {
-      "id": 1,
-      "fname": "daniyao",
-      "email": "danihb@gmail.com",
-      "desig": "manager",
-      "salary": "21000"
-    },
-    {
       "id": 2,
       "fname": "Syed Shaheer Hasan",
-      "email": "sshasan@gmail.com",
+      "email": "sshasan2x@gmail.com",
       "desig": "Manager",
       "salary": "75000"
     },
     {
-      "id": 3,
-      "fname": "Kamran khan ",
-      "email": "kamranhasan@gmail.com",
-      "desig": "Assistant Manager",
-      "salary": "45000"
+      "id": 6,
+      "fname": "Azam khan",
+      "email": "azam345@gmail.com",
+      "desig": "HR Manager",
+      "salary": "70000"
+    },
+    {
+      "id": 8,
+      "fname": "Hasnian siddiqui",
+      "email": "hasso123@gmail.com",
+      "desig": "Admin Manager",
+      "salary": "85000"
     }
   ],
   "signUpusers": [
@@ -50,6 +50,20 @@
       "email": "billo@gmail.com",
       "password": "bilal000",
       "id": 4
+    },
+    {
+      "name": "moazzam",
+      "num": "0366421548545",
+      "email": "moazam@gmail.com",
+      "password": "moazam123",
+      "id": 5
+    },
+    {
+      "name": "Usama Mehmood",
+      "num": "03152845344",
+      "email": "usamam@gmail.com",
+      "password": "osama123",
+      "id": 6
     }
   ]
 }
