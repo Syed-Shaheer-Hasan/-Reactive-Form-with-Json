@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-body{
+/* body{
     background: #ced4da !important
+} */
+body{
+    background: url(./assets/hr-portal-development-highlights.png);
+    
 }

@@ -1,9 +1,6 @@
 .card{
-    background: rgb(75, 105, 127);
+    background: rgba(0, 0, 0, 0.3);
     color: azure;
-    
-   
-    
 }
 a{
     color: azure;
@@ -19,9 +16,3 @@ a{
     }
 }
 
-.container{
-    min-height: 100vh !important;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}

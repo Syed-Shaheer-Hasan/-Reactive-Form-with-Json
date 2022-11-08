@@ -28,9 +28,9 @@ import { NgxUiLoaderHttpModule } from 'ngx-ui-loader';
     ReactiveFormsModule,
     HttpClientModule,
     NgxUiLoaderModule,
-    NgxUiLoaderHttpModule.forRoot({
-      showForeground:true,
-    })
+    // NgxUiLoaderHttpModule.forRoot({
+    //   showForeground:true,
+    // })
     
   ],
   providers: [],

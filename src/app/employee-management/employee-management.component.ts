@@ -30,10 +30,10 @@ export class EmployeeManagementComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.ngx.start();
-    // setTimeout(() => {
-    //   this.ngx.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    // }, 1000);
+    this.ngx.start();
+    setTimeout(() => {
+      this.ngx.stop(); // stop foreground spinner of the master loader with 'default' taskId
+    }, 1000);
     this.CreateForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.minLength(10)]],

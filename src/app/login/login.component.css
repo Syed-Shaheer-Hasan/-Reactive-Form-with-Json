@@ -1,8 +1,6 @@
 .card{
-    background: hsla(205,46%,30%,1);
+    background: rgba(0, 0, 0, 0.3);
     color: azure;
-    position: absolute;
-    top: 20%;
 
 }
 a{
@@ -10,6 +8,10 @@ a{
     text-align: center;
     text-decoration: none;
 }
-/* html{
-    background: rgb(30, 29, 29) !important
-} */
+.is-invalid{
+    border: 2px solid orange;
+}
+
+.invalid-feedback{
+    color: orange !important
+}
