@@ -20,9 +20,6 @@ export class EmployeeManagementComponent implements OnInit {
   showadd!:boolean;
   showupdate!:boolean;
 
-
-
-
   CreateForm!: FormGroup;
   empObj: Employee = new Employee();
 
@@ -36,7 +33,7 @@ export class EmployeeManagementComponent implements OnInit {
     }, 1000);
     this.CreateForm = this.fb.group({
       fname: ['', [Validators.required, Validators.minLength(5)]],
-      email: ['', [Validators.required, Validators.minLength(10)]],
+      email: ['', [Validators.required, Validators.minLength(10),Validators.email]],
       desig: ['', [Validators.required, Validators.minLength(5)]],
       salary: ['', [Validators.required, Validators.minLength(5)]]
 
@@ -50,6 +47,8 @@ export class EmployeeManagementComponent implements OnInit {
 
     this.submit = true;
     if (this.CreateForm.invalid) {
+      debugger
+      console.log("hello")
       return;
     }
 
@@ -61,7 +60,7 @@ export class EmployeeManagementComponent implements OnInit {
     this.ser.postEmp(this.empObj).subscribe(res => {
       console.log(res)
     this.getpostDta();
-    this.CreateForm.reset();
+    // this.CreateForm.reset();
 
     })
 

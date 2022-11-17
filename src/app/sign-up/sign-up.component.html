@@ -6,28 +6,38 @@
             <form [formGroup]="registerform" (ngSubmit)="signUp()">
                 <div class="mb-3">
                     <label class="form-label"><b>Name :</b></label>
-                    <input type="text" formControlName="name" class="form-control" placeholder="Enter your email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" formControlName="name" class="form-control" placeholder="Enter your email"
+                        id="exampleInputEmail1" aria-describedby="emailHelp"
+                        [ngClass]="{'is-invalid': submit && f.name.errors }">
 
                 </div>
                 <div class="mb-3">
                     <label class="form-label"><b>Mobile Number :</b></label>
-                    <input type="string" formControlName="num" class="form-control" placeholder="Enter your email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="string" formControlName="num" class="form-control" placeholder="Enter your email"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
 
                 </div>
                 <div class="mb-3">
                     <label class="form-label"><b>Email address :</b></label>
-                    <input type="email" formControlName="email" class="form-control" placeholder="Enter your email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" formControlName="email" class="form-control" placeholder="Enter your email"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
 
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" placeholder="Enter your password" class="form-label"><b>Password :</b></label>
-                    <input type="password" formControlName="password" placeholder="Enter your password" class="form-control " id="exampleInputPassword1">
+                    <label for="exampleInputPassword1" placeholder="Enter your password" class="form-label"><b>Password
+                            :</b></label>
+                    <input type="password" formControlName="password" placeholder="Enter your password"
+                        class="form-control " id="exampleInputPassword1">
                 </div>
                 <div class="text-center py-3">
                     <button type="submit" class="btn w-25  btn-primary">Sign up</button>
                 </div>
             </form>
             <a routerLink="/login">Already Register ? Click to Login</a>
+
         </div>
     </div>
 </div>
+
+<!-- <app-employee-management></app-employee-management> -->
+<!-- <router-outlet></router-outlet> -->

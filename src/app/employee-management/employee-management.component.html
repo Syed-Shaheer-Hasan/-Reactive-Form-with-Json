@@ -5,7 +5,8 @@
         <nav class="navbar navbar-expand">
           <div id="nn" class="container-fluid">
             <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,7 +23,6 @@
               </ul>
             </div>
             <div class="btn btn-warning" routerLink="/login">Log out</div>
-  
           </div>
         </nav>
       </div>
@@ -30,18 +30,19 @@
   </div>
   <section>
     <div class="justify-content-center mt-5">
-      <h2 class="text-center" style="color: rgb(75, 105, 127);  word-spacing: 10px;"><span class="px-4 py-1" style="background-color:rgb(75, 105, 127); color: azure; ">Employee's</span></h2>
+      <h2 class="text-center" style="color: rgb(75, 105, 127);  word-spacing: 10px;"><span class="px-4 py-1"
+          style="background-color:rgb(75, 105, 127); color: azure; ">Employee's</span></h2>
     </div>
   </section>
-  
+
   <div class="container mt-2">
     <div class="py-4">
       <!-- Button trigger modal -->
-      <button type="button" style="background-color: rgb(75, 105, 127); color: white;" class="btn  mb-3 rounded-0" data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop" (click)="addEmployee()">
+      <button type="button" style="background-color: rgb(75, 105, 127); color: white;" class="btn  mb-3 rounded-0"
+        data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="addEmployee()">
         Add New
       </button>
-  
+
       <table class="table">
         <thead>
           <tr>
@@ -51,29 +52,26 @@
             <th scope="col">Salary</th>
             <th style="padding-left:15px;" scope="col">Edit</th>
             <th style="padding-left:15px;" scope="col">Delete</th>
-  
+
           </tr>
         </thead>
         <tbody>
-              <tr *ngFor="let user of obj">
-                  <td scope="col">{{user.fname}}</td>
-                  <td scope="col">{{user.email}}</td>
-                  <td scope="col">{{user.desig}}</td>
-                  <td scope="col">{{user.salary}}</td>
-                  <td><button  class="btn btn-success" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop" (click)="onEdit(user)">Edit</button></td>
-                  <td><button  class="btn btn-danger" (click)="deletData(user)">Delete</button></td>
-  
-              </tr>
-    
-          </tbody>
+          <tr *ngFor="let user of obj">
+            <td scope="col">{{user.fname}}</td>
+            <td scope="col">{{user.email}}</td>
+            <td scope="col">{{user.desig}}</td>
+            <td scope="col">{{user.salary}}</td>
+            <td><button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                (click)="onEdit(user)">Edit</button></td>
+            <td><button class="btn btn-danger" (click)="deletData(user)">Delete</button></td>
+
+          </tr>
+
+        </tbody>
       </table>
-  
     </div>
-  
-  
     <!-- Modal -->
-    <div  class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -89,11 +87,14 @@
                 <input type="text" formControlName="fname" class="form-control" aria-describedby="emailHelp"
                   [ngClass]="{'is-invalid': submit && f.fname.errors }">
                 <div *ngIf="submit && f.fname.errors" class="invalid-feedback">
-                  Name is required !
+                  <div *ngIf="f['fname'].errors['required']">
+                    Name is required
+                  </div>
+                  <div *ngIf="f['fname'].errors['minlength']">
+                    Name must be at least 5 characters
+                  </div>
                 </div>
-  
               </div>
-  
               <div class="mb-3">
                 <label class="form-label">Email address</label>
                 <input type="email" formControlName="email" class="form-control" aria-describedby="emailHelp"
@@ -105,31 +106,32 @@
               <div class="mb-3">
                 <label class="form-label">Designation</label>
                 <input type="text" formControlName="desig" class="form-control" aria-describedby="emailHelp"
-                [ngClass]="{'is-invalid': submit && f.desig.errors }">
-              <div *ngIf="submit && f.desig.errors" class="invalid-feedback">
-                Field is Required
-              </div>
+                  [ngClass]="{'is-invalid': submit && f.desig.errors }">
+                <div *ngIf="submit && f.desig.errors" class="invalid-feedback">
+                  Field is Required
+                </div>
               </div>
               <div class="mb-3">
                 <label class="form-label">Salary</label>
-                <input type="string" formControlName="salary" class="form-control" id="exampleInputPassword1" [ngClass]="{'is-invalid': submit && f.salary.errors }">
+                <input type="string" formControlName="salary" class="form-control" id="exampleInputPassword1"
+                  [ngClass]="{'is-invalid': submit && f.salary.errors }">
                 <div *ngIf="submit && f.salary.errors" class="invalid-feedback">
                   Field is Required
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="reset"  class="btn btn-secondary" data-bs-dismiss="modal" (click)="onReset()">Close</button>
-                <button type="submit" *ngIf="showadd" class="btn btn-primary" data-bs-dismiss="modal" (click)="postData(); ">Add</button>
-                <td><button  class="btn btn-info" *ngIf="showupdate"  data-bs-dismiss="modal" (click)="onUpdate()">Update</button></td>
-  
+                <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal"
+                  (click)="onReset()">Close</button>
+                <button type="submit" *ngIf="showadd" class="btn btn-primary" (click)="postData(); ">Add</button>
+                <td><button class="btn btn-info" *ngIf="showupdate" data-bs-dismiss="modal"
+                    (click)="onUpdate()">Update</button></td>
+
               </div>
             </form>
           </div>
-  
+
         </div>
       </div>
     </div>
-  
-  
     <!-- Modal -->
-</div>
+  </div>

@@ -32,15 +32,20 @@ export class LoginComponent implements OnInit {
     this.http.get<any>("http://localhost:3000/signUpusers")
     .subscribe(res =>{
     this.user = res.find((a:any)=>{
-      return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
+      return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
 
     });
     if(this.user){
       
       this.loginForm.reset();
-      this.router.navigate(['employee'])
+      this.router.navigate(['employee']);
     }
-    })
-  }
+    else{
+      alert("Invalid Login")
+      this.router.navigate(['/login']);
+      this.loginForm.reset();
+    }
+    });
+  };
 
 }

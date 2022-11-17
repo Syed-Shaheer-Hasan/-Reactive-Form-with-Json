@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div class="row">
-        <div style="margin-top: 130px; color:azure;opacity:0.8;" class="col-6">
+        <div style="margin-top: 150px; color:azure;opacity:0.8;" class="col-6 d-md-block d-none">
             <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;"
                 class="text-center py-4">Employee</h1>
             <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;"
@@ -8,17 +8,18 @@
             <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;"
                 class="text-center py-4">Portal</h1>
         </div>
-        <div style="margin-top: 100px;"  class="col-4 card ms-4 px-5 py-4 border shadow">
-            <h1 class="text-center py-2">Login </h1>
+       <div class="col-6">
+        <div style="margin-top: 90px;" class="col-8 card ms-4 px-5 py-5 border shadow">
+            <h1 class="text-center mb-3 py-3">Login </h1>
             <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="mb-3">
                     <label class="form-label"><b>Email address :</b></label>
                     <input type="email" formControlName="email" class="form-control" placeholder="Enter your email"
-                        id="exampleInputEmail1" aria-describedby="emailHelp" [ngClass]="{'is-invalid': submit && f.email.errors }">
+                        id="exampleInputEmail1" aria-describedby="emailHelp"
+                        [ngClass]="{'is-invalid': submit && f.email.errors }">
                     <div *ngIf="submit && f.email.errors" class="invalid-feedback">
                         Email is required !
                     </div>
-
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" placeholder="Enter your password" class="form-label"><b>Password
@@ -36,7 +37,8 @@
                     <button type="submit" class="btn w-25  btn-primary">Login</button>
                 </div>
             </form>
-            <a routerLink="/signUp">New user ? Click here to Sign Up</a>
+            <a class="mt-1" routerLink="/signUp">New user ? Click here to Sign Up</a>
         </div>
+       </div>
     </div>
 </div>

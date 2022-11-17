@@ -4,13 +4,13 @@
       "id": 2,
       "fname": "Syed Shaheer Hasan",
       "email": "sshasan2x@gmail.com",
-      "desig": "Manager",
+      "desig": "In-charge",
       "salary": "75000"
     },
     {
       "id": 6,
       "fname": "Azam khan",
-      "email": "azam345@gmail.com",
+      "email": "aazam345@gmail.com",
       "desig": "HR Manager",
       "salary": "70000"
     },
@@ -20,6 +20,13 @@
       "email": "hasso123@gmail.com",
       "desig": "PHP developer",
       "salary": "85000"
+    },
+    {
+      "id": 9,
+      "fname": "Kamran Azeem Khan",
+      "email": "kamran@gmail.com",
+      "desig": "Director",
+      "salary": "250000"
     }
   ],
   "signUpusers": [
@@ -64,6 +71,13 @@
       "email": "usamam@gmail.com",
       "password": "osama123",
       "id": 6
+    },
+    {
+      "name": "",
+      "num": "",
+      "email": "",
+      "password": "",
+      "id": 7
     }
   ]
 }
