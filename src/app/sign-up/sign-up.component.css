@@ -15,4 +15,11 @@ a{
         width: 50%  !important;
     }
 }
-
+@media (min-width:581px) and (max-width:780px)  {
+    .card{
+        width: 75% !important;
+    }
+    button.btn.w-25.btn-primary {
+        width: 50%  !important;
+    }
+}
